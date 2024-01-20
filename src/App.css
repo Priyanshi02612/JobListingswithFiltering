@@ -1,38 +1,245 @@
-.App {
-  text-align: center;
+body {
+  background-color: #e1f5ff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  background-color: #4c9797;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header img {
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main {
+  padding: 10px;
+  margin: 30px 120px;
+}
+
+.search-container {
+  margin-top: -10px;
+  background-color: white;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.search {
+  flex: 1;
+}
+
+a.search {
+  margin: 5px;
+}
+
+a.skills {
+  margin: 5px;
+}
+
+a.skills.selected {
+  background-color: #4c9797;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.clear a {
+  font-family: 'League Spartan', sans-serif;
+  color: #4c9797;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.clear:hover {
+  font-weight: bolder;
+}
+
+.container {
+  background-color: white;
+  margin: 20px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border-left: 4px solid #4c9797;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.image {
+  margin-right: 5px;
+  height: auto;
+}
+
+.image:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.Name {
+  flex: 1;
+  padding: 3px;
+  margin: 3px;
+  color: #4c9797;
+  font-weight: bold;
+  font-family: 'League Spartan', sans-serif;
+}
+
+a.new {
+  padding: 3px;
+  color: white;
+  border-radius: 15px;
+  text-decoration: none;
+  background-color: #4c9797;
+}
+
+a.featured {
+  padding: 3px;
+  color: white;
+  border-radius: 15px;
+  text-decoration: none;
+  background-color: black;
+}
+
+.Role {
+  flex: 1;
+  padding: 3px;
+  font-weight: 700;
+  font-family: 'League Spartan', sans-serif;
+  margin: 3px;
+}
+
+a.Role:hover {
+  color: #4c9797;
+  cursor: pointer;
+}
+
+.Info {
+  flex: 1;
+  padding: 3px;
+  color: #7a8585;
+  font-family: 'League Spartan', sans-serif;
+  margin: 3px;
+}
+
+.line-between-divs {
+  border-top: 1px solid darkgray;
+}
+
+.right {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 10px;
+}
+
+a.skill:hover {
+  background-color: #4c9797;
+  color: white;
+}
+
+.skills,
+.skill {
+  text-decoration: none;
+  background-color: #e1f5ff;
+  padding: 5px;
+  color: #4c9797;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 375px) {
+
+  body {
+    font-size: 12px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .container {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .main {
+    margin: 0px 50px 50px 50px;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .list {
+    flex-direction: column;
+  }
+
+  .image {
+    margin-top: -50px;
+    width: 30%;
+  }
+
+  a.new,
+  a.featured {
+    font-size: 10px;
+  }
+
+  .search {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .clear {
+    margin-top: 180px;
   }
 }
+
+@media screen and (max-width: 300px) {
+  .right {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 412px) {
+  .container {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .main {
+    margin: 0px 50px 50px 50px;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .list {
+    flex-direction: column;
+  }
+
+  .image {
+    margin-top: -50px;
+    width: 30%;
+  }
+
+  a.new,
+  a.featured {
+    font-size: 10px;
+  }
+
+  .search {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .clear {
+    margin-top: 180px;
+  }
+}
+
