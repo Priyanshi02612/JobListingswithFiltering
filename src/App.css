@@ -28,26 +28,28 @@ body {
   flex: 1;
 }
 
-a.search {
+.search {
   margin: 5px;
 }
 
-a.skills {
+.skills {
   margin: 5px;
 }
 
-a.skills.selected {
+.skills.selected {
   background-color: #4c9797;
   color: white;
 }
 
-.clear a {
+.clear {
   font-family: 'League Spartan', sans-serif;
   color: #4c9797;
 }
 
 .clear:hover {
   font-weight: bolder;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .container {
@@ -68,13 +70,12 @@ a.skills.selected {
 }
 
 .image {
-  margin-right: 5px;
+  padding: 5px;
   height: auto;
 }
 
 .image:hover {
   cursor: pointer;
-  transform: scale(1.1);
 }
 
 .details {
@@ -91,7 +92,7 @@ a.skills.selected {
   font-family: 'League Spartan', sans-serif;
 }
 
-a.new {
+.new {
   padding: 3px;
   color: white;
   border-radius: 15px;
@@ -99,7 +100,7 @@ a.new {
   background-color: #4c9797;
 }
 
-a.featured {
+.featured {
   padding: 3px;
   color: white;
   border-radius: 15px;
@@ -115,7 +116,7 @@ a.featured {
   margin: 3px;
 }
 
-a.Role:hover {
+.Role:hover {
   color: #4c9797;
   cursor: pointer;
 }
@@ -128,20 +129,23 @@ a.Role:hover {
   margin: 3px;
 }
 
-.line-between-divs {
-  border-top: 1px solid darkgray;
-}
-
-.right {
+.right{
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
-  padding: 10px;
 }
 
-a.skill:hover {
+.skill{
+  height: 16px;
+  margin: 8px;
+}
+
+.skill:hover {
   background-color: #4c9797;
   color: white;
+}
+
+.skills{
+  display: inline-block;
 }
 
 .skills,
@@ -154,37 +158,37 @@ a.skill:hover {
   border-radius: 3px;
 }
 
-@media screen and (max-width: 375px) {
-
-  body {
-    font-size: 12px;
-  }
-
+@media screen and (max-width: 600px) {
   .container {
-    flex-direction: column;
     margin-top: 50px;
   }
 
   .main {
-    margin: 0px 50px 50px 50px;
+    margin: 0px 18px;
   }
 
-  .left,
-  .right {
+  .search-container{
+    margin-top: 30px;
+  }
+
+  .left{
     width: 100%;
+  }
+
+  .right{
+    border-top: 1px solid #7a8585;
+    padding: 5px;
+  }
+  .skill{
+    margin: 5px;
   }
 
   .list {
     flex-direction: column;
   }
 
-  .image {
-    margin-top: -50px;
-    width: 30%;
-  }
-
-  a.new,
-  a.featured {
+  .new,
+  .featured {
     font-size: 10px;
   }
 
@@ -192,54 +196,19 @@ a.skill:hover {
     display: flex;
     flex-wrap: wrap;
   }
-
-  .clear {
-    margin-top: 180px;
-  }
 }
 
-@media screen and (max-width: 300px) {
-  .right {
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 412px) {
-  .container {
-    flex-direction: column;
-    margin-top: 50px;
-  }
-
-  .main {
-    margin: 0px 50px 50px 50px;
-  }
-
-  .left,
-  .right {
-    width: 100%;
-  }
-
-  .list {
-    flex-direction: column;
-  }
-
+@media screen and (max-width: 451px) {
   .image {
     margin-top: -50px;
-    width: 30%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  .container{
+    flex-direction: column;
   }
 
-  a.new,
-  a.featured {
-    font-size: 10px;
-  }
-
-  .search {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .clear {
-    margin-top: 180px;
-  }
 }
 
