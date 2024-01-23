@@ -20,16 +20,14 @@ function Search({ data, handleFilter }) {
       <div className="search-container">
         <div className="search">
           {uniqueSkills.map((skill) => (
-              <a key={skill} href="#" className={`skills ${selectedSkills.includes(skill) ? 'selected' : ''}`} onClick={() => handleSkillClick(skill)}>
+              <span key={skill} className={`skills ${selectedSkills.includes(skill) ? 'selected' : ''}`} onClick={() => handleSkillClick(skill)}>
                 {skill} {selectedSkills.includes(skill) && <img src={image} alt="remove icon" className="cross" />}
-              </a>
+              </span>
           ))}
         </div>
-        <div  className="clear" >
-          <a href="#" onClick={handleClearClick}>
+          <span className="clear" onClick={handleClearClick}>
             Clear
-          </a>
-        </div>
+          </span>
       </div>
   );
 }
