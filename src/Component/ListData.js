@@ -29,21 +29,20 @@ export default function ListData() {
         {filteredData.map((fetchedData) => (
             <div className="container" key={fetchedData.id}>
               <div className="left">
-                <img className="image" src={fetchedData.image} alt={fetchedData.name}/>
+                <span className="image"><img src={fetchedData.image} alt={fetchedData.name}/></span>
                 <div className="details">
-                  <a className="Name">{fetchedData.name} {fetchedData.new && <a className="new">New!</a>} {fetchedData.featured && <a className="featured">Featured</a>}</a>
-                  <a className="Role">{fetchedData.role}</a>
-                  <a className="Info">{fetchedData.info}</a>
+                  <span className="Name">{fetchedData.name} {fetchedData.new && <span className="new">New!</span>} {fetchedData.featured && <span className="featured">Featured</span>}</span>
+                  <div className="Role">{fetchedData.role}</div>
+                  <div className="Info">{fetchedData.info}</div>
                 </div>
               </div>
-              <div className="line-between-divs"></div>
+              <div className="right">
               {fetchedData.skill.map((skill, index) => (
-                  <div key={index} className="right">
-                    <a href="" className="skill">
+                  <span key={index} className="skill">
                       {skill}
-                    </a>
-                  </div>
+                  </span>
               ))}
+              </div>
             </div>
         ))}
       </div>
