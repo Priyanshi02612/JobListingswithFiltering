@@ -1,214 +1,274 @@
+@font-face {
+    font-family: myFont;
+    src: url("https://db.onlinewebfonts.com/t/b495a69d07f04b99d78b811fe01f6c88.woff");
+}
+
 body {
-  background-color: #e1f5ff;
+    background-color: #e1f5ff;
+    font-family: myFont;
+    font-size: 18px;
 }
 
 .header {
-  background-color: #4c9797;
+    background-color: #5fa3a3;
 }
 
-.header img {
-  width: 100%;
+.desktopImage {
+    width: 100%;
+}
+
+.mobileImage {
+    display: none;
 }
 
 .main {
-  padding: 10px;
-  margin: 30px 120px;
+    padding: 10px;
+    margin: 30px 100px;
 }
 
 .search-container {
-  margin-top: -10px;
-  background-color: white;
-  padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  display: flex;
+    margin-top: -10px;
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .search {
-  flex: 1;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.search {
-  margin: 5px;
+.cross {
+    padding: 5px;
+    background-color: #4c9797;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.cross:hover {
+    background-color: black;
 }
 
 .skills {
-  margin: 5px;
+    display: inline-block;
+    margin: 5px;
+}
+
+.skills:hover {
+    cursor: pointer;
 }
 
 .skills.selected {
-  background-color: #4c9797;
-  color: white;
+    background-color: #4c9797;
+    color: white;
 }
 
 .clear {
-  font-family: 'League Spartan', sans-serif;
-  color: #4c9797;
+    font-size: 20px;
+    color: #4c9797;
+    position: absolute;
+    bottom: 7px;
+    right: 9px;
 }
 
 .clear:hover {
-  font-weight: bolder;
-  cursor: pointer;
-  text-decoration: underline;
+    font-weight: bolder;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .container {
-  background-color: white;
-  margin: 20px;
-  padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  border-left: 4px solid #4c9797;
-  display: flex;
-  flex-wrap: wrap;
+    background-color: white;
+    margin: 20px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border-left: 4px solid #4c9797;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .left {
-  display: flex;
-  flex: 1;
-  flex-wrap: wrap;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
 }
 
 .image {
-  padding: 5px;
-  height: auto;
+    padding: 5px;
+    height: auto;
 }
 
 .image:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .details {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .Name {
-  flex: 1;
-  padding: 3px;
-  margin: 3px;
-  color: #4c9797;
-  font-weight: bold;
-  font-family: 'League Spartan', sans-serif;
+    flex: 1;
+    padding: 5px;
+    margin: 3px;
+    color: #4c9797;
+    font-weight: bold;
+}
+
+.new, .featured {
+    padding: 5px;
+    color: white;
+    border-radius: 15px;
+    text-decoration: none;
 }
 
 .new {
-  padding: 3px;
-  color: white;
-  border-radius: 15px;
-  text-decoration: none;
-  background-color: #4c9797;
+    background-color: #4c9797;
 }
 
 .featured {
-  padding: 3px;
-  color: white;
-  border-radius: 15px;
-  text-decoration: none;
-  background-color: black;
+    background-color: black;
 }
 
 .Role {
-  flex: 1;
-  padding: 3px;
-  font-weight: 700;
-  font-family: 'League Spartan', sans-serif;
-  margin: 3px;
+    flex: 1;
+    padding: 3px;
+    font-weight: 700;
+    margin: 3px;
 }
 
 .Role:hover {
-  color: #4c9797;
-  cursor: pointer;
+    color: #4c9797;
+    cursor: pointer;
 }
 
 .Info {
-  flex: 1;
-  padding: 3px;
-  color: #7a8585;
-  font-family: 'League Spartan', sans-serif;
-  margin: 3px;
+    flex: 1;
+    padding: 3px;
+    color: #7a8585;
+    margin: 3px;
 }
 
-.right{
-  display: flex;
-  flex-wrap: wrap;
+.right {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.skill{
-  height: 16px;
-  margin: 8px;
+.skill {
+    height: 16px;
+    margin: 8px;
 }
 
 .skill:hover {
-  background-color: #4c9797;
-  color: white;
-}
-
-.skills{
-  display: inline-block;
+    background-color: #4c9797;
+    color: white;
+    cursor: pointer;
 }
 
 .skills,
 .skill {
-  text-decoration: none;
-  background-color: #e1f5ff;
-  padding: 5px;
-  color: #4c9797;
-  font-weight: bold;
-  border-radius: 3px;
-}
-
-@media screen and (max-width: 600px) {
-  .container {
-    margin-top: 50px;
-  }
-
-  .main {
-    margin: 0px 18px;
-  }
-
-  .search-container{
-    margin-top: 30px;
-  }
-
-  .left{
-    width: 100%;
-  }
-
-  .right{
-    border-top: 1px solid #7a8585;
+    background-color: #e1f5ff;
     padding: 5px;
-  }
-  .skill{
-    margin: 5px;
-  }
-
-  .list {
-    flex-direction: column;
-  }
-
-  .new,
-  .featured {
-    font-size: 10px;
-  }
-
-  .search {
-    display: flex;
-    flex-wrap: wrap;
-  }
+    color: #4c9797;
+    font-weight: bold;
+    border-radius: 3px;
 }
 
-@media screen and (max-width: 451px) {
-  .image {
-    margin-top: -50px;
-  }
+@media screen and (max-width: 400px) {
+
+    .mobileImage {
+        width: 100%;
+        display: block;
+    }
+
+    .desktopImage {
+        display: none;
+    }
+
+    .main {
+        margin: 0 18px;
+    }
+
+    .search-container {
+        margin-top: 30px;
+    }
+
+    .search {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .left {
+        width: 100%;
+    }
+
+    .right {
+        border-top: 1px solid #7a8585;
+        padding: 5px;
+    }
+
+    .skill {
+        margin: 5px;
+    }
+
+    .list {
+        flex-direction: column;
+    }
+
+    .new,
+    .featured {
+        font-size: 10px;
+    }
+
+    .details {
+        margin-top: -20px;
+    }
+
+    .name {
+        display: inline-block;
+    }
+
+    .image img {
+        transform: scale(0.6);
+    }
+
+    .image {
+        margin-left: -20px;
+        margin-top: -65px;
+    }
+
+}
+
+@media screen and (max-width: 420px) {
+    .main {
+        margin: 0 18px;
+    }
+
+    .container {
+        margin-top: 50px;
+    }
+
+    .image {
+        margin-top: -65px;
+    }
 }
 
 @media screen and (max-width: 800px) {
 
-  .container{
-    flex-direction: column;
-  }
+    .container {
+        flex-direction: column;
+    }
 
+}
+
+@media screen and (max-width: 1000px) {
+    .main {
+        margin: 0 18px;
+    }
 }
 
