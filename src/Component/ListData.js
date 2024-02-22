@@ -1,50 +1,124 @@
-import React, { useState, useEffect } from 'react'
-import data from './data'
-import Search from './Search'
+import React, { useState } from "react";
+import data from "./data";
+import image from "../images/icon-remove.svg";
 
-export default function ListData() {
-  const [ filteredData, setFilteredData ] = useState(data)
-  const [ selectedSkills, setSelectedSkills ] = useState([])
+const ListData = () => {
+  const [selectedSkills, setSelectedSkills] = useState([]);
+  const [filteredData, setFilteredData] = useState(data);
 
-  const handleFilter = (selectedSkills) => {
-    setSelectedSkills(selectedSkills)
+  const handleSkillClick = (skill) => {
+    const updatedSkills = selectedSkills.includes(skill)
+      ? selectedSkills.filter((eachSkill) => eachSkill !== skill)
+      : [...selectedSkills, skill];
 
-    const newData = data.filter((item) => {
-      return (
-          selectedSkills.length === 0 ||
-          selectedSkills.every((skill) => item.skill.includes(skill))
-      )
-    })
+    const updatedFilteredData = data.filter((newData) => {
+      return updatedSkills.every((selectedSkill) =>
+        [
+          newData.role,
+          newData.level,
+          ...newData.languages,
+          ...newData.tools,
+        ].includes(selectedSkill)
+      );
+    });
 
-    setFilteredData(newData)
-  }
+    setSelectedSkills(updatedSkills);
+    setFilteredData(updatedFilteredData);
+  };
 
-  useEffect(() => {
-    console.log('Filtered Data:', filteredData)
-  }, [ filteredData ])
+  const handleClearAll = () => {
+    setSelectedSkills([]);
+    setFilteredData(data);
+  };
 
   return (
-      <div className="main">
-        <Search data={data} handleFilter={handleFilter}/>
+    <div className="main-content">
+      {selectedSkills.length > 0 && (
+        <div className="main-filter-container">
+          <div className="list-filter-container">
+            <div className="skills-container">
+              {selectedSkills.map((selectedSkill) => (
+                <span key={selectedSkill} className="selected-skills">
+                  <span className="selected-skill">{`${selectedSkill}`}</span>
+                  <span
+                    className="remove-skill"
+                    onClick={() => handleSkillClick(selectedSkill)}
+                  >
+                    <img src={image} alt="remove icon" />
+                  </span>
+                </span>
+              ))}
+            </div>
+            <span className="clear-skills" onClick={handleClearAll}>
+              Clear
+            </span>
+          </div>
+        </div>
+      )}
+      <div className="list-container">
         {filteredData.map((fetchedData) => (
-            <div className="container" key={fetchedData.id}>
-              <div className="left">
-                <span className="image"><img src={fetchedData.image} alt={fetchedData.name}/></span>
-                <div className="details">
-                  <span className="Name">{fetchedData.name} {fetchedData.new && <span className="new">New!</span>} {fetchedData.featured && <span className="featured">Featured</span>}</span>
-                  <div className="Role">{fetchedData.role}</div>
-                  <div className="Info">{fetchedData.info}</div>
+          <div
+            className="job-container"
+            key={fetchedData.id}
+            title={fetchedData.company}
+          >
+            <div className="job-details">
+              <span className="company-image">
+                <img src={fetchedData.logo} alt={fetchedData.company} />
+              </span>
+              <div className="company-details">
+                <span className="company-name">
+                  {fetchedData.company}
+                  {fetchedData.new && <span className="new">NEW!</span>}
+                  {fetchedData.featured && (
+                    <span className="featured">FEATURED</span>
+                  )}
+                </span>
+                <div className="employee-position">{fetchedData.position}</div>
+                <div className="employee-details">
+                  {fetchedData.postedAt} • {fetchedData.contract} •{" "}
+                  {fetchedData.location}
                 </div>
               </div>
-              <div className="right">
-              {fetchedData.skill.map((skill, index) => (
-                  <span key={index} className="skill">
-                      {skill}
-                  </span>
-              ))}
-              </div>
             </div>
+            <div className="employee-skill">
+              <button
+                className="skill selected"
+                onClick={() => handleSkillClick(fetchedData.role)}
+              >
+                {fetchedData.role}
+              </button>
+              <button
+                className="skill selected"
+                onClick={() => handleSkillClick(fetchedData.level)}
+              >
+                {fetchedData.level}
+              </button>
+              {fetchedData.languages.map((languages, index) => (
+                <button
+                  key={index}
+                  className="skill selected"
+                  onClick={() => handleSkillClick(languages)}
+                >
+                  {languages}
+                </button>
+              ))}
+
+              {fetchedData.tools.map((tool, index) => (
+                <button
+                  key={index}
+                  className="skill selected"
+                  onClick={() => handleSkillClick(tool)}
+                >
+                  {tool}
+                </button>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
-  )
-}
+    </div>
+  );
+};
+
+export default ListData;
